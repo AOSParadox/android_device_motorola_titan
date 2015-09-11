@@ -1,5 +1,5 @@
 #
-# system.prop for falcon
+# system.prop for titan
 #
 ro.build.characteristics=nosdcard
 persist.radio.manual_mode_timer=60
@@ -40,8 +40,8 @@ ro.qc.sdk.izat.service_mask=0x0
 persist.gps.qc_nlp_in_use=0
 ro.gps.agps_provider=1
 persist.sys.isUsbOtgEnabled=true
-ro.build.fingerprint=motorola/falcon_retuglb/falcon_umts:5.0.2/LXB22.99-36/35:user/release-keys
-ro.product.device=falcon_umts
+ro.build.fingerprint=motorola/titan_retuglb/titan_umts:5.0.2/LXB22.99-36/35:user/release-keys
+ro.product.device=titan_umts
 
 #
 # system.prop for msm8226

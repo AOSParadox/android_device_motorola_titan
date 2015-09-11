@@ -1,1 +1,1 @@
-add_lunch_combo full_falcon-userdebug
+add_lunch_combo full_titan-userdebug

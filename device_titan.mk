@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2015 The AOSParadox Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,12 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/falcon/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/motorola/falcon/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/titan/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/motorola/titan/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-$(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/titan/titan-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -38,11 +37,11 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/motorola/falcon/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/motorola/titan/ramdisk,root)
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/motorola/falcon/prebuilt/system,system)
+    $(call find-copy-subdir-files,*,device/motorola/titan/prebuilt/system,system)
 
 # CodeAurora MSM8226 Tree
 include device/qcom/msm8226/msm8226.mk
@@ -73,13 +72,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GPS
 #PRODUCT_COPY_FILES += \
-#    device/motorola/falcon/gps/etc/gps.conf:system/etc/gps.conf \
-#    device/motorola/falcon/gps/etc/flp.conf:system/etc/flp.conf \
-#    device/motorola/falcon/gps/etc/izat.conf:system/etc/izat.conf \
-#    device/motorola/falcon/gps/etc/sap.conf:system/etc/sap.conf \
-#    device/motorola/falcon/gps/etc/quipc.conf:system/etc/quipc.conf \
-#    device/motorola/falcon/gps/etc/xtra_root_cert.pem:system/etc/xtra_root_cert.pem \
-#    device/motorola/falcon/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
+#    device/motorola/titan/gps/etc/gps.conf:system/etc/gps.conf \
+#    device/motorola/titan/gps/etc/flp.conf:system/etc/flp.conf \
+#    device/motorola/titan/gps/etc/izat.conf:system/etc/izat.conf \
+#    device/motorola/titan/gps/etc/sap.conf:system/etc/sap.conf \
+#    device/motorola/titan/gps/etc/quipc.conf:system/etc/quipc.conf \
+#    device/motorola/titan/gps/etc/xtra_root_cert.pem:system/etc/xtra_root_cert.pem \
+#    device/motorola/titan/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 PRODUCT_PACKAGES += \
     gps.msm8226
