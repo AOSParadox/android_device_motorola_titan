@@ -17,7 +17,7 @@
 LOCAL_PATH := $(call my-dir)
 
 BOARD_KERNEL_SEPARATED_DT := true
-KERNEL_DEFCONFIG := falcon_defconfig
+KERNEL_DEFCONFIG := titan_defconfig
 KERNEL_DIR := kernel
 
 -include $(TOP)/$(KERNEL_DIR)/AndroidKernel.mk
@@ -34,7 +34,7 @@ ifeq ($(strip $(BUILD_TINY_ANDROID)),true)
 include device/qcom/common/dtbtool/Android.mk
 endif
 
-DTB_FILES := $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8226-falcon*.dts)
+DTB_FILES := $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8226-titan*.dts)
 DTB_FILES := $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/*.dtb)
 DTB_FILE := $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%.dtb,$(call DTS_FILE,$(1))))
 ZIMG_FILE := $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%-zImage,$(call DTS_FILE,$(1))))

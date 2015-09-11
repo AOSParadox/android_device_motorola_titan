@@ -17,7 +17,7 @@
 # inherit from common msm8226-common
 -include device/qcom/msm8226/BoardConfig.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/motorola/falcon/include
+TARGET_SPECIFIC_HEADER_PATH += device/motorola/titan/include
 
 # Architecture
 TARGET_NO_BOOTLOADER := true
@@ -25,10 +25,10 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 TARGET_BOARD_PLATFORM := msm8226
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsds,falcon_cdma,falcon_retuaws,falcon,falcon_gpe
+TARGET_OTA_ASSERT_DEVICE := titan,titan_umts,titan_udstv,titan_umtsds,titan_retaildsds,XT1068,XT1064,XT1063,XT1069
 
 # Board
-TARGET_BOARD_INFO_FILE := device/motorola/falcon/board-info.txt
+TARGET_BOARD_INFO_FILE := device/motorola/titan/board-info.txt
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -48,7 +48,7 @@ AUDIO_FEATURE_ENABLED_PCM_OFFLOAD := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/falcon/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/titan/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -70,7 +70,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # GPS
 TARGET_NO_RPC := true
-TARGET_GPS_HAL_PATH := device/motorola/falcon/gps
+TARGET_GPS_HAL_PATH := device/motorola/titan/gps
 TARGET_PROVIDES_GPS_LOC_API := true
 
 # Graphics
@@ -78,7 +78,7 @@ TARGET_USES_C2D_COMPOSITION := true
 
 # Kernel
 BOARD_KERNEL_SEPARATED_DT := true
-KERNEL_DEFCONFIG := falcon_defconfig
+KERNEL_DEFCONFIG := titan_defconfig
 TARGET_KERNEL_SOURCE := kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags
 BOARD_RAMDISK_OFFSET := 0x01000000 
@@ -91,8 +91,8 @@ TARGET_USES_MOTOROLA_LOG := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Partition sizes
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 10444800
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10526720
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -101,21 +101,21 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCOM_HARDWARE := false
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/motorola/falcon/ramdisk/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/motorola/titan/ramdisk/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Release tools
-TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/falcon
+TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/titan
 
 # SELinux
 
 -include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/motorola/falcon/sepolicy
+    device/motorola/titan/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     akmd8963.te \
@@ -146,7 +146,7 @@ BOARD_SEPOLICY_UNION += \
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/motorola/falcon/init/init_falcon.c
+TARGET_LIBINIT_DEFINES_FILE := device/motorola/titan/init/init_titan.c
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
