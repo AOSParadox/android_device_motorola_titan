@@ -55,6 +55,9 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.audio.monitorRotation=1
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
