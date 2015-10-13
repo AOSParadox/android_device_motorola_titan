@@ -110,9 +110,9 @@ BOARD_SEPOLICY_DIRS += \
     device/motorola/titan/sepolicy
 
 # Vendor init
-#TARGET_UNIFIED_DEVICE := true
-#TARGET_INIT_VENDOR_LIB := libinit_msm
-#TARGET_LIBINIT_DEFINES_FILE := device/motorola/titan/init/init_titan.c
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := device/motorola/titan/init/init_titan.cpp
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
