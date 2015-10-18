@@ -73,7 +73,6 @@ on fs
     mkdir /pds/bt 0755 mot_tcmd bluetooth
     mkdir /pds/wmdrm 0775 mot_drm mot_drm
     mkdir /pds/security 02770 mot_tpapi mot_tpapi
-    mkdir /pds/batt_health 0755 mot_pwric mot_pwric
 
     chown mot_tcmd mot_tcmd /pds/factory/fti
     chmod 0660 /pds/factory/fti
@@ -191,8 +190,8 @@ service apanic_annotate  /system/bin/sh /system/bin/apanic_annotate.sh build
 
 service batt_health /system/bin/batt_health
     class main
-    user mot_pwric
-    group mot_pwric net_admin log
+    group mot_pwric
+    disabled
 
 on early-boot
 # Motorola Charge_only_mode
