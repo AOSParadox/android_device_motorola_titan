@@ -98,6 +98,10 @@ PRODUCT_PACKAGES += \
     power.msm8226 \
     power.qcom
 
+# Radio
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
 # TimeKeep
 PRODUCT_PACKAGES += \
     timekeep \
