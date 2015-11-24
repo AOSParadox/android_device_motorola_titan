@@ -85,10 +85,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.msm8226
 
-# Motorola
-PRODUCT_PACKAGES += \
-    libmoto
-
 # Power
 PRODUCT_PACKAGES += \
     power.msm8226 \
