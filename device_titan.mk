@@ -27,10 +27,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.par.branch=LA.BF.1.1.3-00310-8x26.0
 
-# Hadware QCOM
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.hardware=qcom
-
 # WCNSS
 PRODUCT_COPY_FILES += \
     device/qcom/msm8226/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
