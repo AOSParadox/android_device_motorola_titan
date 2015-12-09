@@ -156,6 +156,7 @@ ro.audio.fm_max_volume=4096
 
 #need rotation info in audio-land
 ro.audio.monitorRotation=1
+ro.config.vc_call_vol_steps=8
 
 # Enable/disable cabl
 ro.qualcomm.cabl=0
