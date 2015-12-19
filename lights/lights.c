@@ -33,6 +33,9 @@
 
 /******************************************************************************/
 
+#define LED_LIGHT_OFF 0
+#define LED_LIGHT_ON 255
+
 #define MAX_PATH_SIZE 80
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
@@ -49,6 +52,9 @@ char const*const LCD_FILE
 
 char const*const RGB_CONTROL_FILE
         = "/sys/class/leds/rgb/control";
+
+char const*const CHARGING_LED_FILE
+        = "/sys/class/leds/charging/brightness";
 
 /**
  * device methods
@@ -188,6 +194,21 @@ handle_speaker_battery_locked(struct light_device_t* dev)
 }
 
 static int
+set_light_charging(struct light_device_t* dev,
+        struct light_state_t const* state)
+{
+    int brightness_level;
+    pthread_mutex_lock(&g_lock);
+    if (is_lit(state))
+        brightness_level = LED_LIGHT_ON;
+    else
+        brightness_level = LED_LIGHT_OFF;
+    pthread_mutex_unlock(&g_lock);
+
+    return write_int(CHARGING_LED_FILE, brightness_level);
+}
+
+static int
 set_light_notifications(struct light_device_t* dev,
         struct light_state_t const* state)
 {
@@ -279,6 +300,6 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
     .name = "MSM8226 lights Module",
-    .author = "Google, Inc., dhacker29",
+    .author = "Google, Inc., dhacker29, Thecrazyskull",
     .methods = &lights_module_methods,
 };
