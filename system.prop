@@ -8,7 +8,6 @@ tunnel.audiovideo.decode=false
 lpa.decode=true
 lpa.use-stagefright=true
 persist.sys.logkit.ctrlcode=0
-ro.vendor.extension_library=/system/vendor/lib/libqti-perfd-client.so
 ro.usb.mtp=0x2e82
 ro.usb.mtp_adb=0x2e76
 ro.usb.ptp=0x2e83
@@ -40,8 +39,8 @@ ro.qc.sdk.izat.service_mask=0x0
 persist.gps.qc_nlp_in_use=0
 ro.gps.agps_provider=1
 persist.sys.isUsbOtgEnabled=true
-ro.build.fingerprint=motorola/titan_retuglb/titan_umts:5.0.2/LXB22.99-36/35:user/release-keys
-ro.product.device=titan_umts
+ro.build.fingerprint=motorola/titan_retaildsds/titan_umtsds:6.0/MPB24.65-10/10:user/release-keys
+ro.product.device=titan_umtsds
 
 #
 # system.prop for msm8226
@@ -202,7 +201,6 @@ net.early.sockets=0
 # Radio RIL properties
 persist.radio.no_wait_for_card=1
 persist.data.qmi.adb_logmask=0
-persist.radio.apm_sim_not_pwdn=1
 persist.radio.dfr_mode_set=1
 persist.radio.relay_oprt_change=1
 
