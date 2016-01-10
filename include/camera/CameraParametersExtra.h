@@ -15,6 +15,7 @@
  */
 
 #define CAMERA_PARAMETERS_EXTRA_C \
+<<<<<<< HEAD
 const char CameraParameters::KEY_MOT_AUTO_DC_OFFSET[] = "auto-dc-offset-mode"; \
 const char CameraParameters::KEY_MOT_DENOISE[] = "mot-denoise-features"; \
 const char CameraParameters::KEY_MOT_LUMA_ADAPTATION[] = "luma_adaptation"; \
@@ -126,4 +127,11 @@ const char CameraParameters::KEY_QC_ZSL[] = "zsl"; \
     static const char KEY_QC_TOUCH_INDEX_AF[]; \
     static const char KEY_QC_VIDEO_HIGH_FRAME_RATE[]; \
     static const char KEY_QC_ZSL[]; \
+=======
+const char CameraParameters::KEY_ZSL[] = "zsl"; \
+\
+
+#define CAMERA_PARAMETERS_EXTRA_H \
+    static const char KEY_ZSL[]; \
+>>>>>>> 59bb890... falcon: Bring back the common camera wrapper
     \
