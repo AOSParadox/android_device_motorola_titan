@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export DEVICE=titan
+export VENDOR=motorola
+
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
