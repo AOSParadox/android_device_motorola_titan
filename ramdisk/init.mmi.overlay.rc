@@ -1,0 +1,16 @@
+import init.mmi.dtv.rc
+
+on init
+    # uSD slot support
+    chown root input /sys/class/sig_sensor/g_sensor/en_sig_motion
+    chown root input /sys/class/srot_sensor/g_sensor/en_disp_rotation
+    chown system system /sys/class/graphics/fb0/cabc_mode
+    chown system system /sys/class/graphics/fb0/hbm
+
+on post-fs-data
+    mkdir /data/misc/sensor 2755 system compass
+
+service sensord /system/bin/sensord
+    user system
+    group compass misc input
+    class main

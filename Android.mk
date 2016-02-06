@@ -21,8 +21,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(PRODUCT_DEVICE),titan)
-
+ifeq ($(TARGET_DEVICE),titan)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)

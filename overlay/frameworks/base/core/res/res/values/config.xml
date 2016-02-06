@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2016, The CyanogenMod Project
+** Copyright 2015, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -74,6 +74,19 @@
         <item>230</item>
         <item>255</item>
     </integer-array>
+
+    <!-- Array of OEM specific USB mode override config.
+         OEM can override a certain USB mode depending on ro.bootmode.
+         Specify an array of below items to set override rule.
+         [bootmode]:[original USB mode]:[USB mode used]-->
+    <string-array name="config_oemUsbModeOverride">
+        <item>bp-tools:mtp:diag,serial_smd,serial_tty,rmnet,usbnet</item>
+        <item>bp-tools:mtp,adb:diag,serial_smd,serial_tty,rmnet,usbnet,adb</item>
+        <item>bp-tools:ptp:diag,serial_smd,serial_tty,rmnet,usbnet</item>
+        <item>bp-tools:ptp,adb:diag,serial_smd,serial_tty,rmnet,usbnet,adb</item>
+        <item>bp-tools:rndis:rndis,diag,serial_smd,serial_tty,rmnet,usbnet</item>
+        <item>bp-tools:rndis,adb:rndis,diag,serial_smd,serial_tty,rmnet,usbnet,adb</item>
+    </string-array>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -233,6 +246,9 @@
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool name="config_wifi_background_scan_support">true</bool>
 
+    <!-- Wifi driver supports batched scan -->
+    <bool translatable="false" name="config_wifi_batched_scan_supported">false</bool>
+
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
@@ -252,33 +268,6 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
-    <!-- Hardware keys present on the device, stored as a bit field.
-         This integer should equal the sum of the corresponding value for each
-         of the following keys present:
-             1 - Home
-             2 - Back
-             4 - Menu
-             8 - Assistant (search)
-            16 - App switch
-            32 - Camera
-            64 - Volume rocker
-         For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">64</integer>
-
-    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
-         This integer should equal the sum of the corresponding value for each
-         of the following keys present:
-             1 - Home
-             2 - Back
-             4 - Menu
-             8 - Assistant (search)
-            16 - App switch
-            32 - Camera
-            64 - Volume rocker
-         For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">64</integer>
 
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>
