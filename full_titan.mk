@@ -20,9 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from titan device
 $(call inherit-product, device/motorola/titan/device_titan.mk)
 
-# Inherit some common AOSParadox stuff.
-$(call inherit-product-if-exists, vendor/aosparadox/common.mk)
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := titan
 PRODUCT_NAME := full_titan
